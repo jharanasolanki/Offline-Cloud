@@ -232,7 +232,10 @@ else
             // $chownExec = shell_exec($chownDirectory);  
              
             $mountCommand = 'echo "" | sudo -S ./listDisks.sh mount '.$devicePath.' '.$deviceUUID;
-            $mountExec = shell_exec($mountCommand);     
+            $mountExec = shell_exec($mountCommand);
+            $source="forpendrive";
+            $dest="../../../../disk/$deviceUUID";
+            $exec = shell_exec("cp -a /".$source."/. /.".$dest."/");      
         }    
   
     }
