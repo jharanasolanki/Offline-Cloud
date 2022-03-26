@@ -59,7 +59,8 @@ else
             $storageDevices = array();
             $storageDevice = new StorageDevice();
 
-            $currentDevices = explode("/dev", shell_exec('blkid')); //attached Storage Devices
+            $currentDevices = explode("\n", shell_exec('lsblk')); //attached Storage Devices
+            
             $usbStatus = explode("Bus", shell_exec('lsusb')); //attached USB devices
 
             foreach($usbStatus as $key => $value)
@@ -74,26 +75,16 @@ else
 
             foreach($currentDevices as $key => $value)
             {   
-                /////Filter out any non USB devices by LENGTH UUID/////
-                $arr = explode('UUID=', $value);
-                $getUUIDEnd = stripos($arr[1], ' TYPE');            
-                $UUID = substr($arr[1], 0, $getUUIDEnd);           
                 /////////////////////////////////////////////////////////
-                $currentDevices[$key] = "/dev".$value;
+                $currentDevices[$key] = $value;
 
-                if (strpos($value, "swap") !== false || strpos($value, "HUB") !== false || $value == "" ||
-                        strpos($value, "rootfs") !== false || strpos($value, "mmcblk") !== false || strpos($value, "loop") !== false) 
+                if (strpos($value, "sdb") == false) 
                 {
                     unset($currentDevices[$key]);
                 } 
-                else if(strlen($UUID) > 36)
-                {
-                    ////Unset non USB devices//////
-                    unset($currentDevices[$key]);
-                    ///////////////////////////////          
-                }
             }
 
+            print_r($currentDevices);
             $usbStatus = array_values($usbStatus);
             $currentDevices = array_values($currentDevices);
             $allUUIDs = array();
@@ -102,20 +93,21 @@ else
             {       
 
                     //Get path
-                    $devicePathEnd = stripos($value, ':');                
-                    $devicePath = substr($value, 0, $devicePathEnd);   
+                    $deviceName = substr($value, strpos($value, "sdb"), strpos($value, " "));
+                    $devicePath = "/dev/".$deviceName;           
                     
                     //Get UUID
-                    $startUUID = strpos($value, 'UUID="')+6;           
-                    $deviceUUID = substr ($value , $startUUID, 9 ); 
+                    // $startUUID = strpos($value, 'UUID="')+6;
+                    $deviceUUID = explode(" ", shell_exec(' blkid udev '.$devicePath));
+                    print_r($deviceUUID);
+          
+                    $deviceUUID = $deviceUUID[2]; 
 
                     //Get Format
-                    $startFormat = strpos($value, ' TYPE="')+7;
-                    $deviceFormat = str_replace('"', "", substr ($value , $startFormat, 4 ));
-
+                    $deviceFormat = $deviceUUID[3];
 
                     //Set mount path
-                    $mountPath = "/var/www/disk".$deviceUUID;
+                    $mountPath = "/var/www/disk".$deviceName;
                     $connected = 1;
 
                     ////Create storage device object 
@@ -130,13 +122,13 @@ else
                     if($row[0] == "")//never attached USB device, prior to now
                     { 
                         $sql = "INSERT INTO devices (deviceUUID, userID, alias, mountPath, connected)
-                        VALUES ('$deviceUUID', 0, 'New Device', '$mountPath', '$connected')";
+                        VALUES ('$deviceUUID', 0, $devicePath, '$mountPath', '$connected')";
 
                         $con = $this->con;
                         $con->query($sql);
                         
                         $storageDevice->setUserID(0);// Device is not associated yet as it is new..
-                        $storageDevice->setAlias("New Device");//Device is new so it won't have an alias yet..
+                        $storageDevice->setAlias($devicePath);//Device is new so it won't have an alias yet..
 
                         $this->fstabAppend($deviceUUID, $deviceFormat);
                         $this->mountDevice($deviceUUID, $deviceFormat);
@@ -159,8 +151,7 @@ else
                     /////////////////Get Device Info/////////////
                     $deviceInfo = explode(" ", shell_exec('df -H '.$devicePath));
 
-                    print_r($deviceInfo);
-                    //echo $deviceInfo[8]." ";
+                    echo $deviceInfo[8]." ";
                     $deviceCapacity = $deviceInfo[24];
                     $deviceUsedSpace = $deviceInfo[29];
                     $deviceFreeSpace = $deviceInfo[31];
