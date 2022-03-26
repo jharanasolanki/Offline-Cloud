@@ -20,7 +20,7 @@ fi
 
 if [ $1 = "mount" ];then
 
-        mount '/var/www/html/WebUSB/disk'$2''
+        mount $2'/var/www/html/WebUSB/disk/'$3
           
 fi
 

@@ -78,7 +78,7 @@ else
                 /////////////////////////////////////////////////////////
                 $currentDevices[$key] = $value;
 
-                if (strpos($value, "sdb") == false) 
+                if (strpos($value, "sdc") == false) 
                 {
                     unset($currentDevices[$key]);
                 } 
@@ -92,7 +92,7 @@ else
             {       
 
                     //Get path
-                    $deviceName = substr($value, strpos($value, "sdb"), strpos($value, " "));
+                    $deviceName = substr($value, strpos($value, "sdc"), strpos($value, " "));
                     $devicePath = "/dev/".$deviceName;     
 
                     //Get UUID
@@ -130,8 +130,8 @@ else
                         $storageDevice->setUserID(0);// Device is not associated yet as it is new..
                         $storageDevice->setAlias($devicePath);//Device is new so it won't have an alias yet..
 
-                        $this->fstabAppend($deviceUUID, $deviceFormat);
-                        $this->mountDevice($deviceUUID);
+                        // $this->fstabAppend($deviceUUID, $deviceFormat);
+                        $this->mountDevice($devicePath ,$deviceUUID);
                     }
                     else if($row[0] == $deviceUUID)//USB has been attached previously
                     {
@@ -219,18 +219,18 @@ else
             return $storageDevices;
             } 
 
-        public function fstabAppend($deviceUUID, $deviceFormat)        
-        {
-            $fstabCommand = 'echo "" | sudo -S ./listDisks.sh fstabAppend '.$deviceUUID.' '.$deviceFormat;
-            $fstabExec = shell_exec($fstabCommand);     
-        } 
+        // public function fstabAppend($deviceUUID, $deviceFormat)        
+        // {
+        //     $fstabCommand = 'echo "" | sudo -S ./listDisks.sh fstabAppend '.$deviceUUID.' '.$deviceFormat;
+        //     $fstabExec = shell_exec($fstabCommand);     
+        // } 
 
-        public function mountDevice($deviceUUID)        
+        public function mountDevice($devicePath, $deviceUUID)        
         {
-            $chownDirectory = 'echo "" | sudo -S ./listDisks.sh chownDevice '.'/var/www/html/WebUSB/disk/'.$deviceUUID;
-            $chownExec = shell_exec($chownDirectory);  
+            // $chownDirectory = 'echo "" | sudo -S ./listDisks.sh chownDevice '.'/var/www/html/WebUSB/disk/'.$deviceUUID;
+            // $chownExec = shell_exec($chownDirectory);  
              
-            $mountCommand = 'echo "" | sudo -S ./listDisks.sh mount '.$deviceUUID;
+            $mountCommand = 'echo "" | sudo -S ./listDisks.sh mount '.$devicePath.' '.$deviceUUID;
             $mountExec = shell_exec($mountCommand);     
         }    
   

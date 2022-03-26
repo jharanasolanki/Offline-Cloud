@@ -48,7 +48,7 @@ class FileHandler {
        
         $directory = stripslashes($directory);
               
-        $dir = '/var/www/disk'.$directory;
+        $dir = '/var/www/html/WebUSB/disk'.$directory;
         
         $files = array_diff(scandir($dir), array('..', '.'));
         $dirRel ="../disk".$directory;
