@@ -66,9 +66,10 @@ class UserHandler
         }
 
         $sql = "INSERT INTO user_accounts (firstName, lastName, passwordHash, username, salt, email) 
-        VALUES ($firstName, $lastName, $passwordHash, $username, $salt, $email)";
+        VALUES ('$firstName', '$lastName', '$passwordHash', '$username', '$salt', '$email')";
 
         if ($con->query($sql) === TRUE) {
+            
             $result = mysqli_query($con, "SELECT userID FROM user_accounts WHERE username = '$username'");
 
             while($row = mysqli_fetch_array($result))
@@ -76,8 +77,8 @@ class UserHandler
                 $userID = htmlspecialchars($row['userID']);
             }
             mysqli_close($con);
-
             return $userID; 
+
         } else {
             echo "Error: $sql <br> $con->error";  
     }
