@@ -1,4 +1,4 @@
 <?php
 
-$command = "./script.sh.sh";
+$command = "./script.sh";
 $mountExec = shell_exec($command); 
