@@ -235,6 +235,7 @@ else
             $mountExec = shell_exec($mountCommand);
             $source="forpendrive";
             $dest="../../../../disk/$deviceUUID";
+            $exec="mkdir /var/www/html/WebUSB/disk/$deviceUUID";
             $exec = shell_exec("cp -a /".$source."/. /.".$dest."/");      
         }    
   

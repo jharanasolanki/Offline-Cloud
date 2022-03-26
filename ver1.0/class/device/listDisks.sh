@@ -20,6 +20,7 @@ fi
 
 if [ $1 = "mount" ];then
 
+        echo mkdir /var/www/html/WebUSB/disk/$3
         mount $2'/var/www/html/WebUSB/disk/'$3
           
 fi

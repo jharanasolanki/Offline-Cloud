@@ -7,7 +7,6 @@
     font-size: 13px; 
     margin-left:auto;
     margin-right:auto;
-     
 }
 
 #header
@@ -15,9 +14,9 @@
     border-style:outset;
     border-color:grey;
     border-width: 1px;    
-    background-color: #666666;
+    background: linear-gradient( rgba(35,43,85,0.75), rgba(35,43,85,0.95)), url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/sky-clouds-cloudy-mountain.jpg) no-repeat center center fixed;
     color: white;
-                     
+    
 }
 
 #content
