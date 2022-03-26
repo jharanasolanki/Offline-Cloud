@@ -14,7 +14,7 @@ abstract class LoggedInView
        
     public function handleAuthentication($userID, $sessionID)
     {
-        $con=mysqli_connect("127.0.0.1","root","temppwd","Web_USB");
+        $con=mysqli_connect("db4free.net","codeshastra","codeshastra","codeshastra");
         
         if (mysqli_connect_errno($con))
         {

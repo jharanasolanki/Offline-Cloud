@@ -18,7 +18,7 @@ class UserHandler
  
     public function processLogin($username, $password, $time)
     {
-        $con=mysqli_connect("127.0.0.1","root","temppwd","Web_USB");
+        $con=mysqli_connect("db4free.net","codeshastra","codeshastra","codeshastra");
         
         if (mysqli_connect_errno($con))
         {
@@ -56,7 +56,7 @@ class UserHandler
         
         $email = $newUser->getEmail(); $salt = $newUser->getSalt();
         
-        $con=mysqli_connect("127.0.0.1","root","temppwd","Web_USB");
+        $con=mysqli_connect("db4free.net","codeshastra","codeshastra","codeshastra");
 
         if (mysqli_connect_errno())
         {

@@ -27,7 +27,7 @@ class LoginView
  */
     public function LoginView()
     {   
-    $this->con=mysqli_connect("127.0.0.1","root","temppwd","Web_USB");
+    $this->con=mysqli_connect("db4free.net","codeshastra","codeshastra","codeshastra");
     
     if(isset($_POST['username']) || isset($_POST['password']) )
         {
