@@ -1,19 +1,23 @@
 <?php
 	include('config.php');
+	session_start();
+	$uuid =  $_POST["uuid"];
 	$username =  $_POST["userMail"];
 	$pass =  $_POST["userPass"];
 	//$query = "SELECT * FROM shareDetails WHERE username=$username";
 	$q="SELECT * FROM shareDetails WHERE username='".$username."'";
-	echo $q;
+	//echo $q;
 	$result = mysqli_query($conn,$q);
 	if ($result) {
   if (mysqli_num_rows($result) > 0) {
     echo 'found!';
   	}
 	 else {
-	$sql = "INSERT INTO shareDetails VALUES ('$username', '$pass')";
-	echo $sql;
+	$sql = "INSERT INTO shareDetails VALUES ('$uuid','$username', '$pass')";
+	//echo $sql;
 	$conn->query($sql);
+	$_SESSION["username"] = $username;
+	$_SESSION["connected"]=1;
 
   }
 }
@@ -40,5 +44,3 @@ else {
 	// $conn->query($sql);
 
 	//header("Location: cart.php");
-
-?>

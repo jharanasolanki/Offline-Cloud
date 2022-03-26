@@ -37,6 +37,7 @@
         
         <fieldset>
           <label for="name">UserId:</label>
+          <input type="hidden" id="uuid" name="uuid" >
           <input type="text" id="name" name="userMail" placeholder = "Enter UserId for sharing" onkeyup="checkUsername(this.value)" >
         
           <label for="email">Password:</label>

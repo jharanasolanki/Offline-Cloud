@@ -64,7 +64,7 @@ class DeviceView extends LoggedInView
             ?>
              
             <div id ="deviceOptions">
-                <a href="#"  class="exploreButton" onclick="exploreDevice('<?php echo $storageDevice->getDeviceUUID(); ?>')">Explore</a><br> <hr color="grey">
+                <a href="../CS8/html/form.php?uuid=<?php echo $storageDevice->getDeviceUUID(); ?>"  class="exploreButton" onclick="exploreDevice('<?php echo $storageDevice->getDeviceUUID(); ?>')">Share</a><br> <hr color="grey">
                 <a href="#"   class="unmountButton" onclick="unmountDevice('<?php echo $storageDevice->getDeviceUUID(); ?>')">Unmount</a>&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="#"   class="disassociateButton" onclick="disassociateDevice('<?php echo $storageDevice->getDeviceUUID(); ?>')">Forget</a>
             </div><?php
