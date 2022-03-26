@@ -27,7 +27,7 @@ class RegisterView
     public function RegisterView()
     {
         $this->link=new mysqli("db4free.net","codeshastra","codeshastra","codeshastra");  
-        
+        echo "hey";
         if($_POST != "")
         {
             $this->processRegistrationRequest();

@@ -84,7 +84,6 @@ else
                 } 
             }
 
-            print_r($currentDevices);
             $usbStatus = array_values($usbStatus);
             $currentDevices = array_values($currentDevices);
             $allUUIDs = array();
@@ -98,22 +97,24 @@ else
                     
                     //Get UUID
                     // $startUUID = strpos($value, 'UUID="')+6;
-                    $deviceUUID = explode(" ", shell_exec(' blkid udev '.$devicePath));
-                    print_r($deviceUUID);
+                    $device = explode(" ", shell_exec(' blkid udev '.$devicePath));
+                    
           
-                    $deviceUUID = $deviceUUID[2]; 
+                    $deviceUUID = $device[2]; 
+                    $deviceUUID = substr($deviceUUID, strpos($deviceUUID, "\"")+1, -1);
 
                     //Get Format
-                    $deviceFormat = $deviceUUID[3];
+                    $deviceFormat = $device[3];
+                    $deviceFormat = substr($deviceFormat, strpos($deviceFormat, "\"")+1, -1);
 
                     //Set mount path
-                    $mountPath = "/var/www/disk".$deviceName;
+                    $mountPath = "/var/www/disk/".$deviceName;
                     $connected = 1;
 
                     ////Create storage device object 
                     $storageDevice = new StorageDevice();
                     ///////////////////////
-
+                
                     //Search for devices UUID in DB
                     $wasConnected = mysqli_query($this->con, "SELECT deviceUUID FROM devices where deviceUUID = '".$deviceUUID."'");
 
@@ -122,7 +123,7 @@ else
                     if($row[0] == "")//never attached USB device, prior to now
                     { 
                         $sql = "INSERT INTO devices (deviceUUID, userID, alias, mountPath, connected)
-                        VALUES ('$deviceUUID', 0, $devicePath, '$mountPath', '$connected')";
+                        VALUES ('$deviceUUID', 0, '$devicePath', '$mountPath', '$connected')";
 
                         $con = $this->con;
                         $con->query($sql);
@@ -149,9 +150,10 @@ else
                     ///////////////////////////////////////////
 
                     /////////////////Get Device Info/////////////
-                    $deviceInfo = explode(" ", shell_exec('df -H '.$devicePath));
+                    $deviceInfo = explode(" ", shell_exec('sudo df -H '.$devicePath));
+                    echo $devicePath;
 
-                    echo $deviceInfo[8]." ";
+                    print_r($deviceInfo);
                     $deviceCapacity = $deviceInfo[24];
                     $deviceUsedSpace = $deviceInfo[29];
                     $deviceFreeSpace = $deviceInfo[31];
@@ -229,10 +231,10 @@ else
 
         public function mountDevice($deviceUUID)        
         {
-            $chownDirectory = "sudo scripts/./listDisks.sh chownDevice "."/var/www/disk".$deviceUUID;
+            $chownDirectory = "sudo chown -R www-data:www-data ".$deviceUUID." /var/www/disk";
             $chownExec = shell_exec($chownDirectory);  
              
-            $mountCommand = "sudo scripts/./listDisks.sh mount ".$deviceUUID;
+            $mountCommand = "/var/www/disk ".$deviceUUID;
             $mountExec = shell_exec($mountCommand);     
         }    
   
