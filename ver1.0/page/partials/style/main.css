@@ -211,8 +211,7 @@
   border-radius: 4px 0 0 4px;
 }
 
-////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////
+
 
 .myDeviceTable {
 	margin:0px;padding:0px;
@@ -245,8 +244,6 @@
 }
 
 
-////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////
 .connectedDeviceTable {
 	margin:0px;padding:0px;
 	width:100%;
@@ -261,8 +258,10 @@
 	height:100%;
 	margin:0px;padding:0px;
 }
-//.deviceTable tr:nth-child(odd){ background-color:#aad4ff; }
-//.deviceTable tr:nth-child(even)    { background-color:#ffffff; }
+
+/* .deviceTable tr:nth-child(odd){ background-color:#aad4ff; }
+.deviceTable tr:nth-child(even)    { background-color:#ffffff; } */
+
 .connectedDeviceTable td{
 	vertical-align:middle;
 	border:1px solid #000000;
