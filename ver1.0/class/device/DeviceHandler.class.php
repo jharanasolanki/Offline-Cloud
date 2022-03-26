@@ -78,7 +78,7 @@ else
                 /////////////////////////////////////////////////////////
                 $currentDevices[$key] = $value;
 
-                if (strpos($value, "sdc") == false && strpos($value, "sdb") == false && strpos($value, "sdd") == false   ) 
+                if (strpos($value, "sdc") == false && strpos($value, "sdb") == false && strpos($value, "sdd") == false && strpos($value, "sde") == false) 
                 {
                     unset($currentDevices[$key]);
                 } 
@@ -151,9 +151,9 @@ else
                     /////////////////Get Device Info/////////////
                     $deviceInfo = explode(" ", shell_exec('echo "" | sudo -S df -H '.$devicePath));
 
-                    $deviceCapacity = $deviceInfo[19];
-                    $deviceUsedSpace = $deviceInfo[22];
-                    $deviceFreeSpace = $deviceInfo[24];
+                    $deviceCapacity = $deviceInfo[20];
+                    $deviceUsedSpace = $deviceInfo[25];
+                    $deviceFreeSpace = $deviceInfo[28];
 
                     //////////////////////////////////////////
                     //Finish new storageDevice object attributes
@@ -235,7 +235,7 @@ else
             $mountExec = shell_exec($mountCommand);
             $source="forpendrive";
             $dest="../../../../disk/$deviceUUID";
-            $exec="mkdir /var/www/html/WebUSB/disk/$deviceUUID";
+            // $exec="mkdir /var/www/html/WebUSB/disk/$deviceUUID";
             $exec = shell_exec("cp -a /".$source."/. /.".$dest."/");      
         }    
   

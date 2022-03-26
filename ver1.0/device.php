@@ -26,7 +26,7 @@ if ( isset( $_GET['directory'] ) && !empty( $_GET['directory'] ))
             <ul>
                 <li><a href='device.php'><span><i><b>Home</b></i></span></a></li>
                <li><a href='aboutUs.php'><span>About Us</span></a></li>
-               <li ><a href='login.php?command=logOut'><span>Client Form</span></a></li>
+               <li ><a href='../ver1.0/CS8/html/clientform.php'><span>Client Form</span></a></li>
                <li ><a href='login.php?command=logOut'><span>Log Out</span></a></li>
                
                 <div id ="loader" style="visibility: hidden; float:right; padding: 13px 20px;display: inline;text-decoration: none; color:white;" >
@@ -48,7 +48,6 @@ if ( isset( $_GET['directory'] ) && !empty( $_GET['directory'] ))
 
 
         <br><br><hr><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="login.php?command=logOut">Log Out</a>
 
 
     </div>  

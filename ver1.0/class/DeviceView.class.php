@@ -46,7 +46,7 @@ class DeviceView extends LoggedInView
             <div id = "name">
                 <div id="<?php echo 'name'.$storageDevice->getDeviceUUID(); ?>" style="display:inline;">
                 <?php
-                echo "<b>Name</b>: ".$storageDevice->getAlias()."&nbsp;&nbsp;";?>
+                echo "<b>Name</b>: ".$storageDevice->getDeviceUUID()."&nbsp;&nbsp;";?>
                 </div>
                 
                 <img style = "cursor: pointer; cursor: hand;" src="page/partials/images/edit.png " onclick="rename('<?php echo $storageDevice->getAlias(); ?>' , 

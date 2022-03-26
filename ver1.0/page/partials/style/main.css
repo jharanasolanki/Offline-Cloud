@@ -1,9 +1,9 @@
-
+body {
+    font-family: 'Open Sans', sans-serif;
+  }
 #page{
-
     padding: 0% 0% 2% 0%;
     width: 85%;        
-    font-family: sans-serif;
     font-size: 13px; 
     margin-left:auto;
     margin-right:auto;
@@ -75,7 +75,6 @@
 	border-radius:26px;
 	display:inline-block;
 	color:#ffffff;
-	font-family:Arial;
 	font-size:12px;
 	font-weight:bold;
 	padding:0px 15px;
@@ -143,7 +142,6 @@
   padding: 0;
   border: 0;
   font-size: 14px;
-  font-family: Helvetica;
   line-height: 1;
 }
 #cssmenu {
@@ -151,7 +149,8 @@
 }
 #cssmenu ul {
   zoom: 1;
-  background: #424242  top left repeat;
+  background: linear-gradient( rgba(35,43,85,0.75), rgba(35,43,85,0.95)), url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/sky-clouds-cloudy-mountain.jpg) no-repeat center center fixed;
+    
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -238,7 +237,6 @@
 	padding:7px;
         
 	font-size:12px;
-	font-family:Arial;
 	font-weight:normal;
 	color:#000000;
 }
@@ -269,7 +267,6 @@
 	text-align:left;
 	padding:7px;
 	font-size:12px;
-	font-family:Arial;
 	font-weight:normal;
 	color:#000000;
 }
@@ -293,9 +290,7 @@
         behavior: url(/pie/PIE.htc);	
         border:0px solid #000000;
         text-align:center;
-        border-width:1px 1px 1px 1px;
         font-size:14px;
-        font-family:Arial;
         font-weight:bold;
         color:white;
 }
@@ -326,7 +321,6 @@ tr:hover{
 	text-align:center;
 	border-width:1px 1px 1px 1px;
 	font-size:14px;
-	font-family:Arial;
 	font-weight:bold;
 	color:black;
 }
@@ -336,7 +330,6 @@ tr:hover{
 .sizeDetails {
     box-shadow: 6px 6px 6px #888860;
     font-size:12px;
-    font-family:Arial;
     font-weight:normal; 
     outline: 0;
     background: transparent;
@@ -348,7 +341,6 @@ tr:hover{
 .ownerDetail {
     box-shadow: 6px 6px 6px #888860;
     font-size:12px;
-    font-family:Arial;
     font-weight:normal;    
     outline: 0;
     background: transparent;
@@ -382,7 +374,6 @@ tr:hover{
 	border:2px solid #dcdcdc;
 	display:inline-block;
 	color:#666666;
-	font-family:Arial;
 	font-size:13px;
 	font-weight:bold;
 	font-style:normal;
@@ -427,7 +418,6 @@ tr:hover{
 	border:2px solid #84bbf3;
 	display:inline-block;
 	color:#ffffff;
-	font-family:Arial;
 	font-size:13px;
 	font-weight:bold;
 	font-style:normal;
@@ -472,7 +462,6 @@ tr:hover{
 	border:2px solid #83c41a;
 	display:inline-block;
 	color:#ffffff;
-	font-family:Arial;
 	font-size:13px;
 	font-weight:bold;
 	font-style:normal;
@@ -517,7 +506,6 @@ tr:hover{
 	border:2px solid #eda933;;
 	display:inline-block;
 	color:#ffffff;
-	font-family:Arial;
 	font-size:13px;
 	font-weight:bold;
 	font-style:normal;
@@ -553,7 +541,6 @@ tr:hover{
    text-shadow: rgba(0,0,0,.4) 0 1px 0;
    color: white;
    font-size: 9px;
-   font-family: Helvetica, Arial, Sans-Serif;
    text-decoration: none;
    vertical-align: middle;
    }

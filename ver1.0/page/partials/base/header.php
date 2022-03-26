@@ -24,7 +24,7 @@
             
                 <div id="header">
                     
-                    <h1>&nbsp;&nbsp;&nbsp;<i><b>ON OFF Cloud</i></b> &nbsp;<img src="page/partials/images/usb.png"></h1>
+                    <h1>&nbsp;&nbsp;&nbsp;ON OFF Cloud &nbsp;<img src="page/partials/images/usb.png"></h1>
                    
                     <div id = "videoPlayZone">
                     </div>
