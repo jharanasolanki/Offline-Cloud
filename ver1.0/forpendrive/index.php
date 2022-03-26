@@ -158,6 +158,11 @@
 	</table>
 
 	<h2><?php echo("<a href='$ahref'>$atext hidden files</a>"); ?></h2>
+	<form action="upload.php" method="post" enctype="multipart/form-data">
+  Select image to upload:
+  <input type="file" name="fileToUpload" id="fileToUpload">
+  <input type="submit" value="Upload Image" name="submit">
+</form>
 </div>
 </body>
 </html>
