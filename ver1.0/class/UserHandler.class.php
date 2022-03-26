@@ -81,7 +81,7 @@ class UserHandler
 
         } else {
             echo "Error: $sql <br> $con->error";  
-    }
+        }
 }
 
     public function generateEncryptedPassword($salt, $password)

@@ -128,10 +128,13 @@ else
                     $row = mysqli_fetch_array($wasConnected);
                    
                     if($row[0] == "")//never attached USB device, prior to now
-                    {                   
-                        mysqli_query($this->con,"INSERT INTO devices (deviceUUID, userID, alias, mountPath, connected)
-                        VALUES ('$deviceUUID', 0, 'New Device', '$mountPath', '$connected')");
+                    { 
+                        $sql = "INSERT INTO devices (deviceUUID, userID, alias, mountPath, connected)
+                        VALUES ('$deviceUUID', 0, 'New Device', '$mountPath', '$connected')";
 
+                        $con = $this->con;
+                        $con->query($sql);
+                        
                         $storageDevice->setUserID(0);// Device is not associated yet as it is new..
                         $storageDevice->setAlias("New Device");//Device is new so it won't have an alias yet..
 
@@ -233,7 +236,7 @@ else
         public function mountDevice($deviceUUID)        
         {
             $chownDirectory = "sudo scripts/./listDisks.sh chownDevice "."/var/www/disk".$deviceUUID;
-            $chownExec = shell_exec($mountCommand);  
+            $chownExec = shell_exec($chownDirectory);  
              
             $mountCommand = "sudo scripts/./listDisks.sh mount ".$deviceUUID;
             $mountExec = shell_exec($mountCommand);     
