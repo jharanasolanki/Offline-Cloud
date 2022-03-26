@@ -3,7 +3,7 @@
 	$username =  $_POST["userMail"];
 	$pass =  $_POST["userPass"];
 	//$query = "SELECT * FROM shareDetails WHERE username=$username";
-	$q="SELECT * FROM shareDetails WHERE username='".$username."'";
+	$q="SELECT * FROM shareDetails WHERE username='".$username."' and password='".$pass."'";
 	//echo $q;
 	$result = mysqli_query($conn,$q);
 	if ($result) {
@@ -12,8 +12,9 @@
   	}
 	 else {
         $row = $result->fetch_assoc();
+        print_r($row);
         $uuid=$row["uuid"];
-        header("location: ../../../../disk/$uuid");
+        //header("location: ../../../disk/$uuid");
   }
 }
 else {
