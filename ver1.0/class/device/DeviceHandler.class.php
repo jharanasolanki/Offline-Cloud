@@ -98,12 +98,12 @@ else
                     //Get UUID
                     // $startUUID = strpos($value, 'UUID="')+6;
                     $device = explode(" ", shell_exec('echo "" | sudo -S blkid udev '.$devicePath));
-          
-                    $deviceUUID = $device[2]; 
+
+                    $deviceUUID = $device[3]; 
                     $deviceUUID = substr($deviceUUID, strpos($deviceUUID, "\"")+1, -1);
 
                     //Get Format
-                    $deviceFormat = $device[3];
+                    $deviceFormat = $device[4];
                     $deviceFormat = substr($deviceFormat, strpos($deviceFormat, "\"")+1, -1);
 
                     //Set mount path
@@ -135,7 +135,7 @@ else
                     }
                     else if($row[0] == $deviceUUID)//USB has been attached previously
                     {
-                       $this->mountDevice($deviceUUID, $deviceFormat);
+                       $this->mountDevice($devicePath ,$deviceUUID);
 
                        $result = mysqli_query($this->con, "SELECT * FROM devices where deviceUUID = '".$deviceUUID."'");
                        $row = mysqli_fetch_array($result);
@@ -158,6 +158,7 @@ else
                     //////////////////////////////////////////
                     //Finish new storageDevice object attributes
                     ////////////////////
+
 
                     $storageDevice->setDeviceUUID($deviceUUID);
                     $storageDevice->setCapacity($deviceCapacity);
