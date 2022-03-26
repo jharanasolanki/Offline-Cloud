@@ -55,11 +55,12 @@ else
         
         public function fetchDevices($userID)
         {
+            $this->con=new mysqli("db4free.net","codeshastra","codeshastra","codeshastra");
             $storageDevices = array();
             $storageDevice = new StorageDevice();
 
-            $currentDevices = explode("/dev", shell_exec('sudo scripts/./listDisks.sh blkid')); //attached Storage Devices
-            $usbStatus = explode("Bus", shell_exec('sudo scripts/./listDisks.sh listUSBs')); //attached USB devices
+            $currentDevices = explode("/dev", shell_exec('blkid')); //attached Storage Devices
+            $usbStatus = explode("Bus", shell_exec('lsusb')); //attached USB devices
 
             foreach($usbStatus as $key => $value)
             {     
@@ -75,13 +76,13 @@ else
             {   
                 /////Filter out any non USB devices by LENGTH UUID/////
                 $arr = explode('UUID=', $value);
-                $getUUIDEnd = stripos($arr[1], ' TYPE');                
+                $getUUIDEnd = stripos($arr[1], ' TYPE');            
                 $UUID = substr($arr[1], 0, $getUUIDEnd);           
                 /////////////////////////////////////////////////////////
                 $currentDevices[$key] = "/dev".$value;
 
                 if (strpos($value, "swap") !== false || strpos($value, "HUB") !== false || $value == "" ||
-                        strpos($value, "rootfs") !== false || strpos($value, "mmcblk") !== false) 
+                        strpos($value, "rootfs") !== false || strpos($value, "mmcblk") !== false || strpos($value, "loop") !== false) 
                 {
                     unset($currentDevices[$key]);
                 } 
@@ -157,7 +158,7 @@ else
                     ///////////////////////////////////////////
 
                     /////////////////Get Device Info/////////////
-                    $deviceInfo = explode(" ", shell_exec('sudo scripts/./listDisks.sh info '.$devicePath));
+                    $deviceInfo = explode(" ", shell_exec('df -H '.$devicePath));
 
                     $deviceCapacity = $deviceInfo[8];
                     $deviceUsedSpace = $deviceInfo[9];
@@ -229,8 +230,9 @@ else
 
         public function fstabAppend($deviceUUID, $deviceFormat)        
         {
-            $fstabCommand = "sudo scripts/./listDisks.sh fstabAppend ".$deviceUUID." ".$deviceFormat;
-            $fstabExec = shell_exec($fstabCommand);     
+            // $fstabCommand = "sudo scripts/./listDisks.sh fstabAppend ".$deviceUUID." ".$deviceFormat;
+            $fstabExec = shell_exec("mkdir /var/www/disk".$deviceUUID);        
+            $fstabExec = shell_exec('UUID='.$deviceUUID.'  /var/www/disk'.$deviceUUID.'  '.$deviceFormat.'  defaults,uid=www-data,gid=www-data,noauto,errors=remount-ro 0 1 >> /etc/fstab')  ;
         } 
 
         public function mountDevice($deviceUUID)        
