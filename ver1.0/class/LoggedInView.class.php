@@ -22,7 +22,7 @@ abstract class LoggedInView
         }
         else
         {
-            $con->select_db("Web_USB");
+            $con->select_db("codeshastra");
             if ($result = mysqli_query($con, "SELECT * FROM user_accounts where userID = '$userID';")) 
             {
                 $row = mysqli_fetch_row($result);     
