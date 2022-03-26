@@ -4,8 +4,8 @@
  */
 $pageTitle = "Register";
 
-include 'class/UserHandler.class.php';
-include 'class/User.class.php';
+include 'UserHandler.class.php';
+include 'User.class.php';
 
 $registerView = new RegisterView(); 
 
@@ -48,7 +48,7 @@ class RegisterView
         }
         else
         {
-            $this->link->select_db("Web_USB");
+            $this->link->select_db("codeshastra");
             if ($result = mysqli_query($this->link, "SELECT username FROM user_accounts where username = '$username';")) 
             {
                 $row = mysqli_fetch_row($result);
@@ -106,7 +106,7 @@ class RegisterView
     
     public function redirectToDeviceView()
     {       
-        header( 'Location: /ver1.0/login.php' ); 
+        header( 'Location: ../ver1.0/login.php' ); 
     }
     
  /**

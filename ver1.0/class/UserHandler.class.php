@@ -27,9 +27,9 @@ class UserHandler
         else
         {
                 
-            $con->select_db("Web_USB");
+            $con->select_db("codeshastra");
             $username = mysqli_real_escape_string($con, $username);
-            
+
             if ($result = mysqli_query($con, "SELECT * FROM user_accounts where username = '$username';")) 
             {
                 $row = mysqli_fetch_row($result);
@@ -51,10 +51,12 @@ class UserHandler
     
     public function processRegistration($newUser)
     {
-        $username = $newUser->getUsername(); $firstName = $newUser->getFirstName(); $lastName = $newUser->getLastName(); 
+        $username = $newUser->getUsername(); 
+        $firstName = $newUser->getFirstName(); 
+        $lastName = $newUser->getLastName(); 
         $passwordHash=$newUser->getEncryptedPassword();
-        
-        $email = $newUser->getEmail(); $salt = $newUser->getSalt();
+        $email = $newUser->getEmail(); 
+        $salt = $newUser->getSalt();
         
         $con=mysqli_connect("db4free.net","codeshastra","codeshastra","codeshastra");
 
@@ -63,19 +65,23 @@ class UserHandler
             echo "Failed to connect to MySQL: " . mysqli_connect_error();
         }
 
-        mysqli_query($con,"INSERT INTO user_accounts (firstName, lastName, passwordHash, username, salt, email)
-        VALUES ('$firstName', '$lastName', '$passwordHash', '$username', '$salt', '$email')");
+        $sql = "INSERT INTO user_accounts (firstName, lastName, passwordHash, username, salt, email) 
+        VALUES ($firstName, $lastName, $passwordHash, $username, $salt, $email)";
 
-        $result = mysqli_query($con, "SELECT userID FROM user_accounts WHERE username = '$username'");
+        if ($con->query($sql) === TRUE) {
+            $result = mysqli_query($con, "SELECT userID FROM user_accounts WHERE username = '$username'");
 
-        while($row = mysqli_fetch_array($result))
-        {
-            $userID = htmlspecialchars($row['userID']);
-        }
-        mysqli_close($con);
-        
-        return $userID;   
+            while($row = mysqli_fetch_array($result))
+            {
+                $userID = htmlspecialchars($row['userID']);
+            }
+            mysqli_close($con);
+
+            return $userID; 
+        } else {
+            echo "Error: $sql <br> $con->error";  
     }
+}
 
     public function generateEncryptedPassword($salt, $password)
     {

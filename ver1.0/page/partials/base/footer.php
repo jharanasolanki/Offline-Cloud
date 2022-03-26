@@ -1,6 +1,6 @@
         
         <div id="footer">
-            Web USB by Adrian Lowney
+            ON OFF Cloud
         </div>
     
     
