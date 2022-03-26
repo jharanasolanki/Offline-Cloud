@@ -86,14 +86,13 @@ else
                 {
                     unset($currentDevices[$key]);
                 } 
-                else if(strlen($UUID) > 11)
+                else if(strlen($UUID) > 36)
                 {
                     ////Unset non USB devices//////
                     unset($currentDevices[$key]);
                     ///////////////////////////////          
                 }
             }
-
 
             $usbStatus = array_values($usbStatus);
             $currentDevices = array_values($currentDevices);
@@ -105,7 +104,7 @@ else
                     //Get path
                     $devicePathEnd = stripos($value, ':');                
                     $devicePath = substr($value, 0, $devicePathEnd);   
-
+                    
                     //Get UUID
                     $startUUID = strpos($value, 'UUID="')+6;           
                     $deviceUUID = substr ($value , $startUUID, 9 ); 
@@ -160,9 +159,11 @@ else
                     /////////////////Get Device Info/////////////
                     $deviceInfo = explode(" ", shell_exec('df -H '.$devicePath));
 
-                    $deviceCapacity = $deviceInfo[8];
-                    $deviceUsedSpace = $deviceInfo[9];
-                    $deviceFreeSpace = $deviceInfo[10];
+                    print_r($deviceInfo);
+                    //echo $deviceInfo[8]." ";
+                    $deviceCapacity = $deviceInfo[24];
+                    $deviceUsedSpace = $deviceInfo[29];
+                    $deviceFreeSpace = $deviceInfo[31];
 
                     //////////////////////////////////////////
                     //Finish new storageDevice object attributes
