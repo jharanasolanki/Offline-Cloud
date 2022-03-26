@@ -1,30 +1,28 @@
 <?php 
-/**
- * @author Adrian
- */
+
 include 'class/RegisterView.class.php';
-include 'page/partials/base/header.php';
+
 ?>
 
-    <div id ="content">
-         
-    <br>
-    <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please Register Below...</h4><hr>
-    <br>     
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+</head>
 
-    <div id ="loginBox">
-           
+    <div id ="loginBox" class="login">
+    <h1>Register</h1>
         <form  id ="myform" action="register.php" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="action" value="submit"/> 
 
-                    Username:<br> <input name="username" type="text" value="" size="30"/>
-                    <br>First name:<br> <input name="firstName" type="text" title = "No special characters except underscores and spaces "value="" size="30"/> 
-                    <br> Last name:<br> <input name="lastName" type="text" value="" size="30"/> 
-                    <br> Email Address:<br> <input name="email" type="text" value="" size="30"/> 
-                    <br> Password:<br> <input name="password" type="password" value="" size="30"/> 
-                    <br> Confirm Password:<br> <input name="confirmPassword" type="password" value="" size="30"/>
+                    <input name="username" placeholder="Username" type="text" value="" size="30"/>
+                    <input name="firstName" placeholder="First Name" type="text" title = "No special characters except underscores and spaces "value="" size="30"/> 
+                    <input name="lastName" placeholder="Last Name" type="text" value="" size="30"/> 
+                    <input name="email" placeholder="Email" type="text" value="" size="30"/> 
+                    <input name="password" placeholder="Password" type="password" value="" size="30"/> 
+                    <input name="confirmPassword" placeholder="Confirm Password" type="password" value="" size="30"/>
 
-                    <center><br><input type="submit" class="myButton" value="Register"/></center>
+                    <input type="submit" class="myButton btn btn-primary btn-block btn-large" value="Register"/>
             </form>
     </div>
 
@@ -32,7 +30,7 @@ include 'page/partials/base/header.php';
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="login.php">Login</a>    
     
 </div>  
-
+<script src="js/login.js"></script>
 <?php
-include 'page/partials/base/footer.php';
+//include 'page/partials/base/footer.php';
 ?>
