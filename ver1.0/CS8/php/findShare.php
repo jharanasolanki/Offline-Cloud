@@ -13,7 +13,7 @@
 	 else {
         $row = $result->fetch_assoc();
         $uuid=$row["deviceUUID"];
-        header("location: ../../../disk/$uuid");
+        header("location: ../../../disk/$uuid/index.php");
   }
 }
 else {
