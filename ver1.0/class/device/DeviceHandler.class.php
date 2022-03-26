@@ -93,12 +93,11 @@ else
 
                     //Get path
                     $deviceName = substr($value, strpos($value, "sdb"), strpos($value, " "));
-                    $devicePath = "/dev/".$deviceName;           
-                    
+                    $devicePath = "/dev/".$deviceName;     
+
                     //Get UUID
                     // $startUUID = strpos($value, 'UUID="')+6;
-                    $device = explode(" ", shell_exec(' blkid udev '.$devicePath));
-                    
+                    $device = explode(" ", shell_exec('echo "" | sudo -S blkid udev '.$devicePath));
           
                     $deviceUUID = $device[2]; 
                     $deviceUUID = substr($deviceUUID, strpos($deviceUUID, "\"")+1, -1);
@@ -108,7 +107,7 @@ else
                     $deviceFormat = substr($deviceFormat, strpos($deviceFormat, "\"")+1, -1);
 
                     //Set mount path
-                    $mountPath = "/var/www/disk/".$deviceName;
+                    $mountPath = "/var/www/html/WebUSB/disk/".$deviceUUID;
                     $connected = 1;
 
                     ////Create storage device object 
@@ -132,7 +131,7 @@ else
                         $storageDevice->setAlias($devicePath);//Device is new so it won't have an alias yet..
 
                         $this->fstabAppend($deviceUUID, $deviceFormat);
-                        $this->mountDevice($deviceUUID, $deviceFormat);
+                        $this->mountDevice($deviceUUID);
                     }
                     else if($row[0] == $deviceUUID)//USB has been attached previously
                     {
@@ -150,13 +149,11 @@ else
                     ///////////////////////////////////////////
 
                     /////////////////Get Device Info/////////////
-                    $deviceInfo = explode(" ", shell_exec('sudo df -H '.$devicePath));
-                    echo $devicePath;
+                    $deviceInfo = explode(" ", shell_exec('echo "" | sudo -S df -H '.$devicePath));
 
-                    print_r($deviceInfo);
-                    $deviceCapacity = $deviceInfo[24];
-                    $deviceUsedSpace = $deviceInfo[29];
-                    $deviceFreeSpace = $deviceInfo[31];
+                    $deviceCapacity = $deviceInfo[19];
+                    $deviceUsedSpace = $deviceInfo[22];
+                    $deviceFreeSpace = $deviceInfo[24];
 
                     //////////////////////////////////////////
                     //Finish new storageDevice object attributes
@@ -224,17 +221,16 @@ else
 
         public function fstabAppend($deviceUUID, $deviceFormat)        
         {
-            // $fstabCommand = "sudo scripts/./listDisks.sh fstabAppend ".$deviceUUID." ".$deviceFormat;
-            $fstabExec = shell_exec("mkdir /var/www/disk".$deviceUUID);        
-            $fstabExec = shell_exec('UUID='.$deviceUUID.'  /var/www/disk'.$deviceUUID.'  '.$deviceFormat.'  defaults,uid=www-data,gid=www-data,noauto,errors=remount-ro 0 1 >> /etc/fstab')  ;
+            $fstabCommand = 'echo "" | sudo -S ./listDisks.sh fstabAppend '.$deviceUUID.' '.$deviceFormat;
+            $fstabExec = shell_exec($fstabCommand);     
         } 
 
         public function mountDevice($deviceUUID)        
         {
-            $chownDirectory = "sudo chown -R www-data:www-data ".$deviceUUID." /var/www/disk";
+            $chownDirectory = 'echo "" | sudo -S ./listDisks.sh chownDevice '.'/var/www/html/WebUSB/disk/'.$deviceUUID;
             $chownExec = shell_exec($chownDirectory);  
              
-            $mountCommand = "/var/www/disk ".$deviceUUID;
+            $mountCommand = 'echo "" | sudo -S ./listDisks.sh mount '.$deviceUUID;
             $mountExec = shell_exec($mountCommand);     
         }    
   

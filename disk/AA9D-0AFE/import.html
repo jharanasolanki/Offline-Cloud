@@ -1,0 +1,28 @@
+<h2>commision statement</h2>
+    
+<h3>
+the steps are:<br>
+1) open the original excel file<br>
+2) open the agents sheet<br>
+3) include all the column names given below using pivot table settings<br>
+4) arrange the columns as given below using drag and drop<br>
+5) save the file<br>
+6) upload this file below<br><br>
+The format should be as follows:<br>
+<pre>AGENT Code	INS. CO.	Inward_no	ProposalEntryDate	Product 	THE INSURED	OD	TP	NetPremium	S.T.	Total	Policy_no	Sum of Agents PAY	Sum of Agents TDS	Sum of Agents NET PAY<pre>
+</h3>
+    <div class="outer-container">
+        <form action="testimp2.php" method="post"
+            name="frmExcelImport" id="frmExcelImport" enctype="multipart/form-data">
+            <div>
+                <label>Choose Excel
+                    File</label> <input type="file" name="file"
+                    id="file" accept=".xls,.xlsx"><br><br>
+		<label>Name the folder</label>
+			<input type="text" name="foldername"><br><br>
+            </div>
+        	<input type="submit" name="Submit">
+        </form>
+        
+    </div>
+    <div id="response" class="<?php if(!empty($type)) { echo $type . " display-block"; } ?><?php if(!empty($message)) { echo $message; } ?></div>

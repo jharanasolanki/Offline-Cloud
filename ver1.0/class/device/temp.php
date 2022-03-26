@@ -1,2 +1,7 @@
 <?php
-echo shell_exec('sudo ../../scripts/./listDisks.sh blkid');
+
+$output = shell_exec('sh ../../script/test.sh');
+
+echo "<pre>" . $output . "</pre>";
+
+?>
