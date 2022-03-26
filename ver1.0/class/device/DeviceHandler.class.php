@@ -78,7 +78,7 @@ else
                 /////////////////////////////////////////////////////////
                 $currentDevices[$key] = $value;
 
-                if (strpos($value, "sdc") == false) 
+                if (strpos($value, "sdc") == false && strpos($value, "sdb") == false && strpos($value, "sdd") == false   ) 
                 {
                     unset($currentDevices[$key]);
                 } 
@@ -92,7 +92,7 @@ else
             {       
 
                     //Get path
-                    $deviceName = substr($value, strpos($value, "sdc"), strpos($value, " "));
+                    $deviceName = substr($value, strpos($value, "sd"), strpos($value, " "));
                     $devicePath = "/dev/".$deviceName;     
 
                     //Get UUID
