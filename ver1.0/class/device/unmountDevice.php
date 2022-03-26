@@ -11,7 +11,7 @@ if(isset($_POST["deviceUUID"]) && isset($_POST["action"]))
 
 function unmountDevice($deviceUUID)
 {
-    $con=new mysqli("127.0.0.1","root","temppwd","Web_USB");
+    $con=new mysqli("db4free.net","codeshastra","codeshastra","codeshastra");
     mysqli_query($con, "update devices set connected = 0 where deviceUUID = '".$deviceUUID."'");  
     unmount($deviceUUID);
 }

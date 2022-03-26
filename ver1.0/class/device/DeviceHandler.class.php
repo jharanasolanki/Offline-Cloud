@@ -7,20 +7,20 @@ include 'StorageDevice.class.php';
 
 function changeDeviceName($newName, $deviceUUID)
 {
-    $con=new mysqli("127.0.0.1","root","temppwd","Web_USB");
+    $con=new mysqli("db4free.net","codeshastra","codeshastra","codeshastra");
     mysqli_query($con, "update devices set alias = '".$newName."' where deviceUUID = '".$deviceUUID."'");
 }
 
 function disassociateDevice($deviceUUID)
 {
-    $con=new mysqli("127.0.0.1","root","temppwd","Web_USB");
+    $con=new mysqli("db4free.net","codeshastra","codeshastra","codeshastra");
     mysqli_query($con, "update devices set userID = 0 where deviceUUID = '".$deviceUUID."'");
     
 }
 
 function associateDevice($userID, $deviceUUID)
 {
-    $con=new mysqli("127.0.0.1","root","temppwd","Web_USB");
+    $con=new mysqli("db4free.net","codeshastra","codeshastra","codeshastra");
     mysqli_query($con, "update devices set userID = ".$userID." where deviceUUID = '".$deviceUUID."'"); 
 }
 
@@ -49,7 +49,7 @@ else
 
         public function DeviceHandler()
         { 
-            $this->con=new mysqli("127.0.0.1","root","temppwd","Web_USB");
+            $this->con=new mysqli("db4free.net","codeshastra","codeshastra","codeshastra");
             
         }
         

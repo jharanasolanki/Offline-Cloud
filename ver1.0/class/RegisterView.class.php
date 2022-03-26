@@ -26,7 +26,7 @@ class RegisterView
  */
     public function RegisterView()
     {
-        $this->link=new mysqli("127.0.0.1","root","temppwd","Web_USB");  
+        $this->link=new mysqli("db4free.net","codeshastra","codeshastra","codeshastra");  
         
         if($_POST != "")
         {
