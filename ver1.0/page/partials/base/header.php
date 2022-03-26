@@ -14,7 +14,7 @@
     <script>
         $("#myform :input").tooltip({
         position: "center right",
-        offset: [-2, 10]
+        offset: [-2, 10],
         effect: "fade",
         });
         
