@@ -48,7 +48,7 @@ class RegisterView
         }
         else
         {
-            $this->link->select_db("Web_USB");
+            $this->link->select_db("codeshastra");
             if ($result = mysqli_query($this->link, "SELECT username FROM user_accounts where username = '$username';")) 
             {
                 $row = mysqli_fetch_row($result);

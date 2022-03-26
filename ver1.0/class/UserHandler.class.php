@@ -27,7 +27,7 @@ class UserHandler
         else
         {
                 
-            $con->select_db("Web_USB");
+            $con->select_db("codeshastra");
             $username = mysqli_real_escape_string($con, $username);
             
             if ($result = mysqli_query($con, "SELECT * FROM user_accounts where username = '$username';")) 
@@ -67,7 +67,7 @@ class UserHandler
         VALUES ('$firstName', '$lastName', '$passwordHash', '$username', '$salt', '$email')");
 
         $result = mysqli_query($con, "SELECT userID FROM user_accounts WHERE username = '$username'");
-
+        echo $result;
         while($row = mysqli_fetch_array($result))
         {
             $userID = htmlspecialchars($row['userID']);
