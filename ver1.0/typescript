@@ -1,0 +1,87 @@
+Script started on 2022-03-27 02:18:55+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="129" LINES="9"]
+(base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/ver1.0[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/ver1.0[00m$ exitsudo -i[3Pexit[Kcd script
+bash: cd: script: No such file or directory
+(base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/ver1.0[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/ver1.0[00m$ cd scripts
+(base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/ver1.0/scripts[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/ver1.0/scripts[00m$ cd scripts[K[5Pexitsudo -i./test.shsudo mount /dev/sdc1 /var/www/html/WebUSB/disk/AA9D-0AFE^C
+(base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/ver1.0/scripts[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/ver1.0/scripts[00m$ sudo mount /dev/sdc1 /var/www/html/WebUSB/disk/AA9D-0AFE
+mount: /var/www/html/WebUSB/disk/AA9D-0AFE: /dev/sdc1 already mounted on /media/esha/ELEMENTARY.
+(base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/ver1.0/scripts[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/ver1.0/scripts[00m$ lsblk
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+loop0    7:0    0 938.5M  1 loop /snap/android-studio/118
+loop1    7:1    0 938.5M  1 loop /snap/android-studio/119
+loop2    7:2    0     4K  1 loop /snap/bare/5
+loop3    7:3    0     9M  1 loop /snap/canonical-livepatch/126
+loop4    7:4    0     9M  1 loop /snap/canonical-livepatch/132
+loop5    7:5    0 212.8M  1 loop /snap/code/89
+loop6    7:6    0 209.1M  1 loop /snap/code/91
+loop7    7:7    0 110.8M  1 loop /snap/core/12725
+loop8    7:8    0 110.7M  1 loop /snap/core/12821
+loop9    7:9    0  55.5M  1 loop /snap/core18/2284
+loop10   7:10   0  55.5M  1 loop /snap/core18/2344
+loop11   7:11   0  61.9M  1 loop /snap/core20/1361
+loop12   7:12   0  61.9M  1 loop /snap/core20/1376
+loop13   7:13   0 210.1M  1 loop /snap/eclipse/48
+loop14   7:14   0 155.4M  1 loop /snap/firefox/1115
+loop15   7:15   0 155.4M  1 loop /snap/firefox/1154
+loop16   7:16   0   277M  1 loop /snap/gimp/380
+loop17   7:17   0 391.3M  1 loop /snap/gimp/383
+loop18   7:18   0 162.9M  1 loop /snap/gnome-3-28-1804/145
+loop19   7:19   0 164.8M  1 loop /snap/gnome-3-28-1804/161
+loop20   7:20   0   219M  1 loop /snap/gnome-3-34-1804/72
+loop21   7:21   0   219M  1 loop /snap/gnome-3-34-1804/77
+loop22   7:22   0 248.8M  1 loop /snap/gnome-3-38-2004/99
+loop23   7:23   0 247.9M  1 loop /snap/gnome-3-38-2004/87
+loop24   7:24   0   2.5M  1 loop /snap/gnome-system-monitor/169
+loop25   7:25   0   2.5M  1 loop /snap/gnome-system-monitor/174
+loop26   7:26   0  65.1M  1 loop /snap/gtk-common-themes/1515
+loop27   7:27   0  65.2M  1 loop /snap/gtk-common-themes/1519
+loop28   7:28   0  27.8M  1 loop /snap/heroku/4083
+loop29   7:29   0  27.8M  1 loop /snap/heroku/4085
+loop30   7:30   0  58.1M  1 loop /snap/imagerunner/1
+loop31   7:31   0 189.6M  1 loop /snap/inkscape/10024
+loop32   7:32   0   190M  1 loop /snap/inkscape/10088
+loop33   7:33   0 260.7M  1 loop /snap/kde-frameworks-5-core18/32
+loop34   7:34   0 176.9M  1 loop /snap/krita/64
+loop35   7:35   0 138.1M  1 loop /snap/krita/63
+loop36   7:36   0 124.7M  1 loop /snap/mysql-workbench-community/9
+loop37   7:37   0  11.8M  1 loop /snap/ngrok/32
+loop38   7:38   0  11.8M  1 loop /snap/ngrok/35
+loop39   7:39   0 168.2M  1 loop /snap/spotify/57
+loop40   7:40   0 169.6M  1 loop /snap/spotify/58
+loop41   7:41   0  64.7M  1 loop /snap/sublime-text/110
+loop42   7:42   0  64.9M  1 loop /snap/sublime-text/112
+loop43   7:43   0 295.7M  1 loop /snap/vlc/2344
+loop44   7:44   0 295.6M  1 loop /snap/vlc/2288
+sda      8:0    0 931.5G  0 disk 
+├─sda1   8:1    0   529M  0 part 
+├─sda2   8:2    0    99M  0 part 
+├─sda3   8:3    0    16M  0 part 
+├─sda4   8:4    0 131.1G  0 part 
+├─sda6   8:6    0  39.4G  0 part /
+└─sda7   8:7    0 372.5G  0 part /home
+sdc      8:32   1   1.9G  0 disk 
+└─sdc1   8:33   1   1.9G  0 part /var/www/html/WebUSB/disk/AA9D-0AFE
+sdd      8:48   1  28.7G  0 disk 
+└─sdd1   8:49   1  28.7G  0 part /media/esha/POP_OS 20_0
+sr0     11:0    1  1024M  0 rom  
+(base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/ver1.0/scripts[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/ver1.0/scripts[00m$ lsblksudo mount /dev/sdc1 /var/www/html/WebUSB/disk/AA9D-0AFEcd scripts[K[K[5Pexitcd scriptssudo mount /dev/sdc1 /var/www/html/WebUSB/disk/AA9D-0AFElsblk[Ksudo -S blkid udev [1P[1P[1P[1P[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cd[Ks[Kde[K[K/dev/s[Ksdc1
+/dev/sdc1: LABEL_FATBOOT="ELEMENTARY" LABEL="ELEMENTARY" UUID="B35E-67E1" TYPE="vfat" PARTUUID="13f6d47f-01"
+(base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/ver1.0/scripts[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/ver1.0/scripts[00m$ sudo -S blkid udev /dev/sdc1lsblk[Ksudo mount /dev/sdc1 /var/www/html/WebUSB/disk/AA9D-0AFE[K[K[K[K[K[K[K[K[K[K/B35E-67E1
+mount: /var/www/html/WebUSB/disk/B35E-67E1: mount point does not exist.
+(base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/ver1.0/scripts[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/ver1.0/scripts[00m$ sudo mount /dev/sdc1 /var/www/html/WebUSB/disk/B35E-67E1[C[1P /var/www/html/WebUSB/disk/B35E-67E1[1P /var/www/html/WebUSB/disk/B35E-67E1[1P /var/www/html/WebUSB/disk/B35E-67E1[1P /var/www/html/WebUSB/disk/B35E-67E1[1P /var/www/html/WebUSB/disk/B35E-67E1[1P /var/www/html/WebUSB/disk/B35E-67E1[1P /var/www/html/WebUSB/disk/B35E-67E1[1P /var/www/html/WebUSB/disk/B35E-67E1[1P /var/www/html/WebUSB/disk/B35E-67E1[1P/var/www/html/WebUSB/disk/B35E-67E1[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C /dev/sdc1
+mount: /dev/sdc1: special device /var/www/html/WebUSB/disk/B35E-67E1 does not exist.
+(base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/ver1.0/scripts[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/ver1.0/scripts[00m$ sudo mount /var/www/html/WebUSB/disk/B35E-67E1 /dev/sdc1dev/sdc1 /var/www/html/WebUSB/disk/B35E-67E1
+mount: /var/www/html/WebUSB/disk/B35E-67E1: mount point does not exist.
+(base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/ver1.0/scripts[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/ver1.0/scripts[00m$ ./test.sh
+./test.sh: line 3: =: command not found
+./test.sh: line 4: =: command not found
+mkdir: cannot create directory ‘/var/www/html/WebUSB/disk/’: File exists
+chmod: invalid option -- 'm'
+Try 'chmod --help' for more information.
+mount:  /var/www/html/WebUSB/disk/B35E-67E1: No such file or directory
+(base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/ver1.0/scripts[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/ver1.0/scripts[00m$ ./test.sh[Kmkdir /var/www/html/WebUSB/disk/B35E-67E1
+(base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/ver1.0/scripts[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/ver1.0/scripts[00m$ mkdir /var/www/html/WebUSB/disk/B35E-67E1./test.sh[K
+./test.sh: line 3: =: command not found
+./test.sh: line 4: =: command not found
+mkdir: cannot create directory ‘/var/www/html/WebUSB/disk/’: File exists
+chmod: invalid op
