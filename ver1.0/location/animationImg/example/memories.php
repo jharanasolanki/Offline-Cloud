@@ -16,10 +16,8 @@ $builder = new GifBuilder();
 $builder->setRepeat();
 
 //$myarray = glob("../../lastMonth/*.png");
-$myarray = glob("lastMonth/*.png");
-
+$myarray = glob("horse/lastMonth/*.png");
 $arrlength = count($myarray);
-
 // for($i=0;$i<$arrlength;$i++)
 // {
 //     //echo $i.'.png';
@@ -28,19 +26,21 @@ $arrlength = count($myarray);
 // }
 for($i=0;$i<$arrlength;$i++)
 {
-    $myarray[$i] = substr( $myarray[$i], strpos($myarray[$i], "/") + 1);
-    $myarray[$i] = strtok($myarray[$i],'/');
+    $myarray[$i] =  substr($myarray[$i], strrpos($myarray[$i], '/' )+1);
+    //echo $myarray[$i];
+    //$myarray[$i] = substr( $myarray[$i], strpos($myarray[$i], "/") + 1);
+    //$myarray[$i] = strtok($myarray[$i],'/');
     //echo $myarray[$i];
     //echo (__DIR__ .'/horse/'.$myarray[$i]);
     $builder->addFrame()
-    ->setCanvas(new FileImageCanvas(__DIR__ .'/lastMonth/'.$myarray[$i]))
+    ->setCanvas(new FileImageCanvas(__DIR__ .'/horse/lastMonth/'.$myarray[$i]))
     ->setDuration(100);
 }
 // for ($i = 1; $i <= 3; $i++) {
 
-//     //echo ( '/horse/' . $i . '.png');
+//     echo ( '/horse/output' . $i . '.png');
 //     $builder->addFrame()
-//         ->setCanvas(new FileImageCanvas(__DIR__ . '/horse/' . $i . '.png'))
+//         ->setCanvas(new FileImageCanvas(__DIR__ . '/horse/output' . $i . '.png'))
 //         ->setDuration(100);
 // }
 $builder->output('horse.gif');

@@ -51,32 +51,36 @@ for($i=0;$i<$arrlength;$i++)
     if($lastWeekendDate  == $date[$i]){
         $filePath = $fileName[$i];
         $destinationFilePath = $pathToStoreLastWeekend. '/'.$fileName[$i];
-        if( !copy($filePath, $destinationFilePath) ) { 
-            echo "File can't be copied! \n"; 
-        } 
-        else { 
-            echo "File has been copied! \n"; 
-        }
+        imagepng(imagecreatefromstring(file_get_contents($filePath)), $pathToStoreLastWeekend. '/output'.$i.'.png');
+        // if( !copy($filePath, $destinationFilePath) ) { 
+        //     echo "File can't be copied! \n"; 
+        // } 
+        // else { 
+        //     echo "File has been copied! \n"; 
+        // }
     }
     elseif($lastMonth == $date[$i]){
+        echo $fileName[$i];
         $filePath = $fileName[$i];
         $destinationFilePath =  $pathToStoreLastMonth. '/'.$fileName[$i];
-        if( !copy($filePath, $destinationFilePath) ) { 
-            echo "File can't be copied! \n"; 
-        } 
-        else { 
-            echo "File has been copied! \n"; 
-        } 
+        imagepng(imagecreatefromstring(file_get_contents($filePath)), $pathToStoreLastMonth. '/output'.$i.'.png');
+        // if( !copy($filePath, $destinationFilePath) ) { 
+        //     echo "File can't be copied! \n"; 
+        // } 
+        // else { 
+        //     echo "File has been copied! \n"; 
+        // } 
     }
     elseif($lastYear == $date[$i]){
         $filePath = $fileName[$i];
         $destinationFilePath =  $pathToStoreLastYear. '/'.$fileName[$i];
-        if( !copy($filePath, $destinationFilePath) ) { 
-            echo "File can't be copied! \n"; 
-        } 
-        else { 
-            echo "File has been copied! \n"; 
-        }
+        imagepng(imagecreatefromstring(file_get_contents($filePath)), $pathToStoreLastYear. '/output'.$i.'.png');
+        // if( !copy($filePath, $destinationFilePath) ) { 
+        //     echo "File can't be copied! \n"; 
+        // } 
+        // else { 
+        //     echo "File has been copied! \n"; 
+        // }
     }
 }?>
 <a href = "animationImg/example/memories.php">Show animation </a>
