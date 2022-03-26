@@ -1,35 +1,30 @@
-<?php 
+<?php
+
 /**
  * @author Adrian
  */
 include 'class/LoginView.class.php';
-include 'page/partials/base/header.php';
+//include 'page/partials/base/header.php';
 ?>
 
-<div id ="content"> 
-        
-    <br>
-    <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login</h4><hr>
-    <br>     
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+</head>
 
-    <div id ="loginBox">
-           
-        <form  action="login.php" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="action" value="submit"/> 
+<div id="loginBox" class="login">
+    <h1>Login</h1>
+    <form action="login.php" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="action" value="submit" />
+        <input name="username" placeholder="Username" type="text" value="" size="30" />
+        <input name="password" type="password" placeholder="Password" value="" size="30" />
+        <input type="submit" class="myButton btn btn-primary btn-block btn-large" value="Login" />
+    </form>
 
-                    Username: <input name="username" type="text" value="" size="30"/> 
-                    Password: <input name="password" type="password" value="" size="30"/> 
-                    
+</div>
 
-                    <center><br><input type="submit" class="myButton" value="Login"/></center>
-            </form>
-        
-    </div>
-    
-    <br><br><hr><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="register.php">Create Account</a>
-</div>  
-
+<script src="js/login.js"></script>
 <?php
 include 'page/partials/base/footer.php';
 ?>
