@@ -1,6 +1,7 @@
 <?php
 
 include 'class/LoginView.class.php';
+include 'navbar.php';
 //include 'page/partials/base/header.php';
 ?>
 
@@ -23,5 +24,5 @@ include 'class/LoginView.class.php';
 
 <script src="js/login.js"></script>
 <?php
-include 'page/partials/base/footer.php';
+//include 'page/partials/base/footer.php';
 ?>

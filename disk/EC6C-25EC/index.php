@@ -1,7 +1,13 @@
+<?php
+
+include '../../ver1.0/navbar.php';
+?>
 <!doctype html>
 <html>
-
 <head>
+
+   <link href="navbar.css" rel="stylesheet" />
+   <script src="navbar.js"></script>
 	<meta charset="UTF-8">
 	<link rel="shortcut icon" href="./.favicon.ico">
 	<title>Directory Contents</title>
