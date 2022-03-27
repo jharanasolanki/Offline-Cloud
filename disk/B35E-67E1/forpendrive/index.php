@@ -35,10 +35,11 @@
 	}
 
  	// Checks to see if veiwing hidden files is enabled
+	 if (isset($_SERVER['QUERY_STRING'])) {
 	if($_SERVER['QUERY_STRING']=="hidden")
 	{$hide="";
 	 $ahref="./";
-	 $atext="Hide";}
+	 $atext="Hide";}}
 	else
 	{$hide=".";
 	 $ahref="./?hidden";

@@ -26,6 +26,7 @@ include '../../ver1.0/navbar.php';
 			<th>Type</th>
 			<th>Size</th>
 			<th>Date Modified</th>
+			<th>Download</th>
 		</tr>
 	    </thead>
 	    <tbody><?php
@@ -158,6 +159,7 @@ include '../../ver1.0/navbar.php';
 			<td><a href='./$namehref'>$extn</a></td>
 			<td sorttable_customkey='$sizekey'><a href='./$namehref'>$size</a></td>
 			<td sorttable_customkey='$timekey'><a href='./$namehref'>$modtime</a></td>
+			<td ><a href='./$namehref' download>Download</a></td>
 		</tr>");
 	   }
 	}
