@@ -1,4 +1,4 @@
 <?php
-    header( 'Location: ver1.0/login.php' ) ;
+    header( 'Location: Temp/ver1.0/landing/index.php' ) ;
 ?>
   

@@ -6,8 +6,8 @@ include '../../ver1.0/navbar.php';
 <html>
 <head>
 
-<link href="/ver1.0/css/navbar.css" rel="stylesheet" />
-<script src="/ver1.0/js/navbar.js"></script>
+<link href="../../ver1.0/css/navbar.css" rel="stylesheet" />
+<script src="../../ver1.0/js/navbar.js"></script>
 	<meta charset="UTF-8">
 	<link rel="shortcut icon" href="./.favicon.ico">
 	<title>Directory Contents</title>
@@ -17,6 +17,14 @@ include '../../ver1.0/navbar.php';
 </head>
 
 <body>
+
+<div id="container">
+<h1>Memories</h1>
+<img src="lastyear.gif" alt="Computer man" style="width:100px;height:auto;">
+
+<img src="lastweek.gif" alt="Computer man" style="width:100px;height:auto; ">
+
+</div>
 	<div id="container">
 		<h1>Directory Contents</h1>
 

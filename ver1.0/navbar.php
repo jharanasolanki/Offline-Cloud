@@ -1,7 +1,7 @@
 <html>
     <head>
     <link rel = "icon" href = "logo.jpg" type = "image/x-icon">
-    <link href="temp/ver1.0/css/navbar.css" rel="stylesheet" />
+    <link href="css/navbar.css" rel="stylesheet" />
     </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">

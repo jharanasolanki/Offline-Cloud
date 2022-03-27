@@ -27,7 +27,6 @@ class RegisterView
     public function RegisterView()
     {
         $this->link=new mysqli("db4free.net","codeshastra","codeshastra","codeshastra");  
-        echo "hey";
         if($_POST != "")
         {
             $this->processRegistrationRequest();
@@ -40,6 +39,8 @@ class RegisterView
  
     public function processRegistrationRequest()
     {
+        $this->link=new mysqli("db4free.net","codeshastra","codeshastra","codeshastra");  
+        
         $username = filter_input(INPUT_POST, 'username'); 
          
         if (mysqli_connect_errno($this->link))
@@ -157,41 +158,57 @@ class RegisterView
  */
     public function setUsername($username)
     {
+        $this->link=new mysqli("db4free.net","codeshastra","codeshastra","codeshastra");  
+        
     	$this->username = mysqli_real_escape_string($this->link, $username);
     }
  
     public function setFirstName($firstName)
     {
+        $this->link=new mysqli("db4free.net","codeshastra","codeshastra","codeshastra");  
+        
     	$this->firstName = mysqli_real_escape_string($this->link, $firstName);
     }
     
     public function setLastName($lastName)
     {
+        $this->link=new mysqli("db4free.net","codeshastra","codeshastra","codeshastra");  
+        
     	$this->lastName = mysqli_real_escape_string($this->link, $lastName);
     }
     
     public function setEmail($email)
     {
+        $this->link=new mysqli("db4free.net","codeshastra","codeshastra","codeshastra");  
+        
     	$this->email = mysqli_real_escape_string($this->link, $email);
     }
     
     public function setPassword($password)
     {
+        $this->link=new mysqli("db4free.net","codeshastra","codeshastra","codeshastra");  
+        
     	$this->password = mysqli_real_escape_string($this->link, $password);
     }
     
     public function setConfirmPassword($confirmPassword)
     {
+        $this->link=new mysqli("db4free.net","codeshastra","codeshastra","codeshastra");  
+        
     	$this->confirmPassword = mysqli_real_escape_string($this->link, $confirmPassword);
     }
     
     public function setSalt($salt)
     {
+        $this->link=new mysqli("db4free.net","codeshastra","codeshastra","codeshastra");  
+        
     	$this->salt = mysqli_real_escape_string($this->link, $salt);
     }
         
     public function setEncryptedPassword($passwordHash)
     {
+        $this->link=new mysqli("db4free.net","codeshastra","codeshastra","codeshastra");  
+        
         $this->passwordHash = mysqli_real_escape_string($this->link, $passwordHash);	
     }
 
