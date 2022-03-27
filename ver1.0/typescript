@@ -217,4 +217,44 @@ bash: cd: ../ver1.0/forpendrive/runscript.php: Not a directory
 (base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/disk[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/disk[00m$ cd ../ver1.0/forpendrive/runscript.php[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcd /var/www/html/WebUSB/ver1.0/forpendrive/runscript.php
 bash: cd: /var/www/html/WebUSB/ver1.0/forpendrive/runscript.php: Not a directory
 (base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/disk[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/disk[00m$ cd /var/www/html/WebUSB/ver1.0/forpendrive/runscript.php[K[K[K[K[K[K[K[K[K[K[K[K[K
-(base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/ver1.0/forpendrive[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/ver1.0/forpendrive[00m$ cd /var/www/html/WebUSB/ver1.0/forpendrive/runscript.php[Krunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Punscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Punscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Punscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php
+(base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/ver1.0/forpendrive[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/ver1.0/forpendrive[00m$ cd /var/www/html/WebUSB/ver1.0/forpendrive/runscript.php[Krunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Punscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Punscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Punscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Punscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php[1Prunscript.php.runscript.php/runscript.php
+bash: ./runscript.php: Permission denied
+(base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/ver1.0/forpendrive[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/ver1.0/forpendrive[00m$ ./runscript.phps./runscript.phpu./runscript.phpd./runscript.phpo./runscript.php ./runscript.php
+sudo: ./runscript.php: command not found
+(base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/ver1.0/forpendrive[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/ver1.0/forpendrive[00m$ sudo ./runscript.php[C[C[C[K[K[Ksh[1Pscript.sh[1Pscript.sh[1Pscript.sh
+sudo: ./script.sh: command not found
+(base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/ver1.0/forpendrive[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/ver1.0/forpendrive[00m$ sudo ./script.sh
+sudo: ./script.sh: command not found
+(base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/ver1.0/forpendrive[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/ver1.0/forpendrive[00m$ cd /[K..
+(base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/ver1.0[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/ver1.0[00m$  [Kcd scripts
+(base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/ver1.0/scripts[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/ver1.0/scripts[00m$ cd scripts..[Ksudo ./script.shrunscript.php[4Pscript.sh[1P.sh[1P.sh[1P.sh[1P.sh[1P.sh[1P.sht.she.shs.sht.sh
+./test.sh: line 3: =: command not found
+./test.sh: line 4: =: command not found
+mkdir: cannot create directory ‘/var/www/html/WebUSB/disk/’: File exists
+chmod: invalid option -- 'm'
+Try 'chmod --help' for more information.
+mount: /etc/fstab: parse error at line 8 -- ignored
+mount: /etc/fstab: parse error at line 10 -- ignored
+mount: /etc/fstab: parse error at line 12 -- ignored
+mount:  /var/www/html/WebUSB/disk/EC6C-25EC: can't find in /etc/fstab.
+(base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/ver1.0/scripts[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/ver1.0/scripts[00m$ sudo ./test.sh
+./test.sh: line 3: =: command not found
+./test.sh: line 4: =: command not found
+mkdir: cannot create directory ‘/var/www/html/WebUSB/disk/’: File exists
+mount: /etc/fstab: parse error at line 8 -- ignored
+mount: /etc/fstab: parse error at line 10 -- ignored
+mount: /etc/fstab: parse error at line 12 -- ignored
+mount:  /var/www/html/WebUSB/disk/EC6C-25EC: can't find in /etc/fstab.
+(base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/ver1.0/scripts[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/ver1.0/scripts[00m$ sudo ./test.sh
+./test.sh: line 3: =: command not found
+mount: /etc/fstab: parse error at line 8 -- ignored
+mount: /etc/fstab: parse error at line 10 -- ignored
+mount: /etc/fstab: parse error at line 12 -- ignored
+mount:  /var/www/html/WebUSB/disk/ES: can't find in /etc/fstab.
+(base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/ver1.0/scripts[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/ver1.0/scripts[00m$ sudo ./test.sh
+mkdir: cannot create directory ‘/var/www/html/WebUSB/disk/ES’: File exists
+mount: /var/www/html/WebUSB/disk/ES: special device dev/sde1 does not exist.
+(base) ]0;esha@esha-Aspire-E5-576: /var/www/html/WebUSB/ver1.0/scripts[01;32mesha@esha-Aspire-E5-576[00m:[01;34m/var/www/html/WebUSB/ver1.0/scripts[00m$ lsblk
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+loop0    7:0    0 938.5M  1 loop /snap/android-studio/118
+loop1    7:1 
