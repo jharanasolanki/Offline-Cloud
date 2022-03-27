@@ -1,8 +1,5 @@
 <?php
 
-/**
- * @author Adrian
- */
 include 'class/LoginView.class.php';
 //include 'page/partials/base/header.php';
 ?>
