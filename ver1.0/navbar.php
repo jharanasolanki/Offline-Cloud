@@ -11,7 +11,7 @@
                 <li class="nav-item"><a class="nav-link" href="CS8/html/clientform.php">Share</a></li>
                 <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
                 <li class="nav-item"><a class="nav-link" href="register.php">Signup</a></li>
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="/Temp/ver1.0/index.php">Home</a></li>
             </ul>
         </div>
     </div>
