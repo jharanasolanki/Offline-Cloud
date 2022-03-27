@@ -10,9 +10,9 @@ include '../../ver1.0/navbar.php';
    <title>Directory Contents</title>
 
    <link rel="stylesheet" href="./.style.css">
-   <link href="navbar.css" rel="stylesheet" />
+   <link href="/ver1.0/css/navbar.css" rel="stylesheet" />
    <script src="./.sorttable.js"></script>
-   <script src="navbar.js"></script>
+   <script src="/ver1.0/js/navbar.js"></script>
 </head>
 
 <body>
