@@ -43,4 +43,4 @@ for($i=0;$i<$arrlength;$i++)
 //         ->setCanvas(new FileImageCanvas(__DIR__ . '/horse/output' . $i . '.png'))
 //         ->setDuration(100);
 // }
-$builder->output('horse.gif');
+$builder->output('moki.gif');
