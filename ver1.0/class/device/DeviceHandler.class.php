@@ -109,7 +109,6 @@ else
                     //Set mount path
                     $mountPath = "/var/www/html/WebUSB/disk/".$deviceUUID;
                     $connected = 1;
-
                     ////Create storage device object 
                     $storageDevice = new StorageDevice();
                     ///////////////////////
@@ -131,11 +130,11 @@ else
                         $storageDevice->setAlias($devicePath);//Device is new so it won't have an alias yet..
 
                         // $this->fstabAppend($deviceUUID, $deviceFormat);
-                        $this->mountDevice($devicePath ,$deviceUUID);
+                        $this->mountDevice($devicePath ,$deviceUUID, $mountPath);
                     }
                     else if($row[0] == $deviceUUID)//USB has been attached previously
                     {
-                       $this->mountDevice($devicePath ,$deviceUUID);
+                       $this->mountDevice($devicePath ,$deviceUUID, $mountPath);
 
                        $result = mysqli_query($this->con, "SELECT * FROM devices where deviceUUID = '".$deviceUUID."'");
                        $row = mysqli_fetch_array($result);
@@ -226,17 +225,23 @@ else
         //     $fstabExec = shell_exec($fstabCommand);     
         // } 
 
-        public function mountDevice($devicePath, $deviceUUID)        
+        public function mountDevice($devicePath, $deviceUUID, $mountPath)        
         {
             // $chownDirectory = 'echo "" | sudo -S ./listDisks.sh chownDevice '.'/var/www/html/WebUSB/disk/'.$deviceUUID;
-            // $chownExec = shell_exec($chownDirectory);  
-             
-            $mountCommand = 'echo "" | sudo -S ./listDisks.sh mount '.$devicePath.' '.$deviceUUID;
-            $mountExec = shell_exec($mountCommand);
+            // $chownExec = shell_exec($chownDirectory); 
+
+            // mkdir /var/www/html/WebUSB/disk/$2
+            // chmod ugo+rxw /var/www/html/WebUSB/disk/$2
+            // mount $1 '/var/www/html/WebUSB/disk/'$2'
+
+            $mkdir = shell_exec('echo "" | sudo -S mkdir /var/www/html/WebUSB/disk/'.$deviceUUID);
+            $chmod = shell_exec('echo "" | sudo -S chmod ugo+rwx /var/www/html/WebUSB/disk/'.$deviceUUID);
+            $mountExec = shell_exec('echo "" | sudo -S mount '.$devicePath.' '.$mountPath);
+            
             $source="forpendrive";
-            $dest="../../../../disk/$deviceUUID";
+            $dest= $mountPath;
             // $exec="mkdir /var/www/html/WebUSB/disk/$deviceUUID";
-            $exec = shell_exec("cp -a /".$source."/. /.".$dest."/");      
+            $exec = shell_exec("echo '' | sudo -S cp -a /var/www/html/WebUSB/ver1.0/forpendrive ".$dest."/");   
         }    
   
     }
