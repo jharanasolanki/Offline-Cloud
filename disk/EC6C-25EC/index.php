@@ -6,8 +6,8 @@ include '../../ver1.0/navbar.php';
 <html>
 <head>
 
-   <link href="navbar.css" rel="stylesheet" />
-   <script src="navbar.js"></script>
+<link href="/ver1.0/css/navbar.css" rel="stylesheet" />
+<script src="/ver1.0/js/navbar.js"></script>
 	<meta charset="UTF-8">
 	<link rel="shortcut icon" href="./.favicon.ico">
 	<title>Directory Contents</title>
