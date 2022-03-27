@@ -1,7 +1,7 @@
 <?php 
 
 include 'class/RegisterView.class.php';
-
+include 'navbar.php';
 ?>
 
 <head>
@@ -24,10 +24,7 @@ include 'class/RegisterView.class.php';
 
                     <input type="submit" class="myButton btn btn-primary btn-block btn-large" value="Register"/>
             </form>
-    </div>
-
-    <br><br><hr><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="login.php">Login</a>    
+    </div>   
     
 </div>  
 <script src="js/login.js"></script>
