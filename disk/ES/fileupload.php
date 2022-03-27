@@ -1,5 +1,5 @@
 <?php
-define ('SITE_ROOT', realpath(dirname(__FILE__)));
+define("SITE_ROOT", dirname(dirname(__FILE__)));
 $target_dir = "";
 $target_file = $target_dir. basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
